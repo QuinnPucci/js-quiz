@@ -119,10 +119,37 @@ function nextQuestion(event) {
 
 // end game
 function endGame() {
+
+    initials = window.prompt("what are your intials")
+
     var score = timer
-    window.prompt("your score is " + score)
+    window.alert("your score is " + score)
+
+    var highScore = localStorage.getItem("highscore");
+    if (highScore === null) {
+    highScore = 0;
+    }
+
+     if (score > highScore) {
+    localStorage.setItem("highscore", score);
+    localStorage.setItem("initials", initials);
+    }
+  displayHighScore()
 }
 // end game end
+
+// display high score 
+function displayHighScore () {
+    var highScore = localStorage.getItem("highscore");
+    var initials = localStorage.getItem("initials");
+    if (initials === null || highScore === null) {
+        window.alert("there is no highscore")
+    }
+
+    window.alert(initials + " has the high score of " + highScore)
+    window.location.reload()
+}
+// display high score end
 
 // countdown
 function countDown() {
@@ -130,14 +157,15 @@ function countDown() {
     document.getElementById("timer").innerText=timer
 
     if (timer <= 0) {
-     var retry = confirm('Game over, press "OK" to try again and "CANCEL" to view give up')
+     var retry = confirm('Game over, press "OK" to try again and "CANCEL" give up')
         if (retry) {
          startGame()
         }
+        else {
+            displayHighScore()
+          }
     }
-      else {
-      // CALL END GAME FUNCTION HERE
-     }
+     
 };
 // countdown end
 
