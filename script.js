@@ -6,7 +6,9 @@ var choiceOne = document.getElementById('choice1')
 var choiceTwo = document.getElementById('choice2')
 var choiceThree = document.getElementById('choice3')
 var choiceFour = document.getElementById('choice4')
-var timer = 30
+var timer = 3000
+var correct = document.getElementById("correct")
+var wrong = document.getElementById("wrong")
 
 // question array
 
@@ -66,7 +68,7 @@ function startGame() {
 startButton.classList.add("hide")
 questionContainerEl.classList.remove('hide')
 document.getElementById("timer").innerText=timer
-timer = 30
+timer = 3000
 currentQuestionIndex = 0
 setInterval(countDown, 1000)
 showQuestion()
@@ -98,11 +100,15 @@ function nextQuestion(event) {
     console.log(questions[currentQuestionIndex].correctAnswer)
     if (questions[currentQuestionIndex].correctAnswer === event.target.innerHTML) {
         console.log("correct")
+        correct.classList.remove('hide')
+        wrong.classList.add('hide')
     }
     else {
         timer=timer-8 
         document.getElementById("timer").innerText=timer
         console.log("incorrect")
+        wrong.classList.remove('hide')
+        correct.classList.add('hide')
     }
     console.log(event.target.innerHTML)
     currentQuestionIndex++
