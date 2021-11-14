@@ -6,7 +6,7 @@ var choiceOne = document.getElementById('choice1')
 var choiceTwo = document.getElementById('choice2')
 var choiceThree = document.getElementById('choice3')
 var choiceFour = document.getElementById('choice4')
-var timer = 75
+var timer = 30
 
 // question array
 
@@ -66,7 +66,7 @@ function startGame() {
 startButton.classList.add("hide")
 questionContainerEl.classList.remove('hide')
 document.getElementById("timer").innerText=timer
-timer = 75
+timer = 30
 currentQuestionIndex = 0
 setInterval(countDown, 1000)
 showQuestion()
@@ -159,10 +159,14 @@ function countDown() {
     if (timer <= 0) {
      var retry = confirm('Game over, press "OK" to try again and "CANCEL" give up')
         if (retry) {
-         startGame()
+         timer = 75
+         window.location.reload()
         }
         else {
             displayHighScore()
+            timer = 75
+            window.location.reload()
+            
           }
     }
      
