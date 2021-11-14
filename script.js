@@ -6,7 +6,7 @@ var choiceOne = document.getElementById('choice1')
 var choiceTwo = document.getElementById('choice2')
 var choiceThree = document.getElementById('choice3')
 var choiceFour = document.getElementById('choice4')
-var timer = 3000
+var timer = 75
 var correct = document.getElementById("correct")
 var wrong = document.getElementById("wrong")
 
@@ -14,44 +14,44 @@ var wrong = document.getElementById("wrong")
 
 var questions = [
     {
-        question: "this is question 1",
+        question: "Which of the following will define a variable?",
         answers: [
-            { text: 'possible answer a'},
-            { text: 'possible answer b'},
-            { text: 'possible answer c'},
-            { text: 'possible answer d'}
+            { text: 'const'},
+            { text: 'var'},
+            { text: 'let'},
+            { text: 'all of the above'}
         ],
-        correctAnswer: "possible answer a"
+        correctAnswer: 'all of the above'
     },
     {
-        question: "this is question 2",
+        question: "What symbol would be used to start array?",
         answers: [
-            { text: 'possible answer e'},
-            { text: 'possible answer f'},
-            { text: 'possible answer g'},
-            { text: 'possible answer h'}
+            { text: "{"},
+            { text: '('},
+            { text: '['},
+            { text: '<'}
         ],
-        correctAnswer: "possible answer f"
+        correctAnswer: '['
     },
     {
-        question: "this is question 3",
+        question: "What symbol would be used to denote a false statement",
         answers: [
-            { text: 'possible answer i'},
-            { text: 'possible answer j'},
-            { text: 'possible answer k'},
-            { text: 'possible answer l'}
+            { text: '!'},
+            { text: '?'},
+            { text: ':'},
+            { text: '/'}
         ],
-        correctAnswer: "possible answer l"
+        correctAnswer: "!"
     },
     {
-        question: "this is question 4",
+        question: "What shorthand is used to add 1",
         answers: [
-            { text: 'possible answer m'},
-            { text: 'possible answer n'},
-            { text: 'possible answer o'},
-            { text: 'possible answer p'}
+            { text: '='},
+            { text: '+'},
+            { text: '++'},
+            { text: '=='}
         ],
-        correctAnswer: "possible answer m"
+        correctAnswer: "++"
     }
 ]
 
@@ -68,7 +68,7 @@ function startGame() {
 startButton.classList.add("hide")
 questionContainerEl.classList.remove('hide')
 document.getElementById("timer").innerText=timer
-timer = 3000
+timer = 75
 currentQuestionIndex = 0
 setInterval(countDown, 1000)
 showQuestion()
