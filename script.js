@@ -144,10 +144,13 @@ function displayHighScore () {
     var initials = localStorage.getItem("initials");
     if (initials === null || highScore === null) {
         window.alert("there is no highscore")
+        window.location.reload()
     }
 
-    window.alert(initials + " has the high score of " + highScore)
-    window.location.reload()
+    else {
+        window.alert(initials + " has the high score of " + highScore)
+        window.location.reload()
+    }
 }
 // display high score end
 
