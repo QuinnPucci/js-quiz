@@ -14,7 +14,7 @@ var wrong = document.getElementById("wrong")
 
 var questions = [
     {
-        question: "Which word define a variable?",
+        question: "Which word defines a variable?",
         answers: [
             { text: 'this'},
             { text: 'for'},
