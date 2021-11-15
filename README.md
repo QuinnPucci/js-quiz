@@ -2,4 +2,4 @@
 
 https://quinnpucci.github.io/js-quiz/
 
-./js-quiz.jpeg
+./js-quiz.png
