@@ -6,7 +6,7 @@ var choiceOne = document.getElementById('choice1')
 var choiceTwo = document.getElementById('choice2')
 var choiceThree = document.getElementById('choice3')
 var choiceFour = document.getElementById('choice4')
-var timer = 75
+var timer = 70
 var correct = document.getElementById("correct")
 var wrong = document.getElementById("wrong")
 
@@ -68,7 +68,7 @@ function startGame() {
 startButton.classList.add("hide")
 questionContainerEl.classList.remove('hide')
 document.getElementById("timer").innerText=timer
-timer = 75
+timer = 70
 currentQuestionIndex = 0
 setInterval(countDown, 1000)
 showQuestion()
@@ -104,7 +104,7 @@ function nextQuestion(event) {
         wrong.classList.add('hide')
     }
     else {
-        timer=timer-8 
+        timer=timer-9
         document.getElementById("timer").innerText=timer
         console.log("incorrect")
         wrong.classList.remove('hide')
