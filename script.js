@@ -14,17 +14,17 @@ var wrong = document.getElementById("wrong")
 
 var questions = [
     {
-        question: "Which of the following will define a variable?",
+        question: "Which word define a variable?",
         answers: [
-            { text: 'const'},
-            { text: 'var'},
+            { text: 'this'},
+            { text: 'for'},
             { text: 'let'},
-            { text: 'all of the above'}
+            { text: 'if'}
         ],
-        correctAnswer: 'all of the above'
+        correctAnswer: 'let'
     },
     {
-        question: "What symbol would be used to start array?",
+        question: "Which symbol is used to start an array?",
         answers: [
             { text: "{"},
             { text: '('},
@@ -34,7 +34,7 @@ var questions = [
         correctAnswer: '['
     },
     {
-        question: "What symbol would be used to denote a false statement",
+        question: "Which symbol is used to denote a false statement?",
         answers: [
             { text: '!'},
             { text: '?'},
@@ -44,7 +44,7 @@ var questions = [
         correctAnswer: "!"
     },
     {
-        question: "What shorthand is used to add 1",
+        question: "What shorthand is used to add 1?",
         answers: [
             { text: '='},
             { text: '+'},
