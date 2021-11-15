@@ -126,7 +126,20 @@ function nextQuestion(event) {
 // end game
 function endGame() {
 
-    initials = window.prompt("what are your intials")
+    initials = window.prompt("enter your intials")
+    if (initials === "" ) {
+        initials = window.prompt("you didnt enter anything, enter your intials")
+         if (initials === "" || initials === null) {
+            window.location.reload
+        }
+    }
+    else if (initials === null) {
+        initials = window.prompt("you didnt enter anything, enter your intials")
+        if (initials === "" || initials === null) {
+            window.location.reload
+        }
+    }
+
 
     var score = timer
     window.alert("your score is " + score)
@@ -149,7 +162,7 @@ function displayHighScore () {
     var highScore = localStorage.getItem("highscore");
     var initials = localStorage.getItem("initials");
     if (initials === null || highScore === null) {
-        window.alert("there is no highscore")
+        window.alert("There is no highscore")
         window.location.reload()
     }
 
@@ -166,7 +179,7 @@ function countDown() {
     document.getElementById("timer").innerText=timer
 
     if (timer <= 0) {
-     var retry = confirm('Game over, press "OK" to try again and "CANCEL" give up')
+     var retry = confirm('you ran out of time, press "OK" to try again and "CANCEL" to give up')
         if (retry) {
          timer = 75
          window.location.reload()
