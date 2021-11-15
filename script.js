@@ -57,14 +57,14 @@ var questions = [
 
 var currentQuestionIndex = 0
 
-startButton.addEventListener('click', startGame)
+startButton.addEventListener('click', startQuiz)
 
 
 // ---------------------FUNCTIONS------------------
 
 
-// start game
-function startGame() {
+// start Quiz
+function startQuiz() {
 startButton.classList.add("hide")
 questionContainerEl.classList.remove('hide')
 document.getElementById("timer").innerText=timer
@@ -73,13 +73,11 @@ currentQuestionIndex = 0
 setInterval(countDown, 1000)
 showQuestion()
 }
-// start game end
+// start Quiz end
 
 
 //  show current question
 function showQuestion() {
-    console.log(questionEl)
-    
     questionEl.innerText = questions[currentQuestionIndex].question
 
     choiceOne.innerText = questions[currentQuestionIndex].answers[0].text
@@ -97,24 +95,20 @@ function showQuestion() {
 // next question
 function nextQuestion(event) {
     event.preventDefault()
-    console.log(questions[currentQuestionIndex].correctAnswer)
     if (questions[currentQuestionIndex].correctAnswer === event.target.innerHTML) {
-        console.log("correct")
         correct.classList.remove('hide')
         wrong.classList.add('hide')
     }
     else {
         timer=timer-9
         document.getElementById("timer").innerText=timer
-        console.log("incorrect")
         wrong.classList.remove('hide')
         correct.classList.add('hide')
     }
-    console.log(event.target.innerHTML)
+
     currentQuestionIndex++
     if (currentQuestionIndex === questions.length) {
-        console.log(questions.length)
-        endGame()
+        endQuiz()
     } 
     else {
     showQuestion()
@@ -123,8 +117,8 @@ function nextQuestion(event) {
 }
 // next question end
 
-// end game
-function endGame() {
+// end Quiz
+function endQuiz() {
 
     initials = window.prompt("enter your intials")
     if (initials === "" ) {
@@ -155,7 +149,7 @@ function endGame() {
     }
   displayHighScore()
 }
-// end game end
+// end Quiz end
 
 // display high score 
 function displayHighScore () {
